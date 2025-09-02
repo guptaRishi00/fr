@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,13 +13,26 @@
             box-sizing: border-box;
         }
         
+        /* Professional Icon System */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .icon-large {
+            width: 32px;
+            height: 32px;
+        }
+        
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
             color: #1f2937;
             line-height: 1.7;
             min-height: 100vh;
-            font-weight: 400;
         }
         
         .container {
@@ -33,7 +45,7 @@
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #334155 70%, #475569 100%);
             color: #fff;
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -52,7 +64,7 @@
         }
         
         header h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             background: linear-gradient(45deg, #ffffff, #60a5fa, #a78bfa, #ffffff);
@@ -63,12 +75,12 @@
             position: relative;
             z-index: 1;
             letter-spacing: -0.02em;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
         header h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 400;
+            color: white;
             opacity: 0.95;
             margin-bottom: 0;
             position: relative;
@@ -83,195 +95,150 @@
             50% { background-position: 100% 50%; }
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .slide-in {
-            animation: slideIn 0.6s ease-out forwards;
-        }
-        
         main {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
         
-        .hero-section {
-            text-align: center;
-            margin-bottom: 5rem;
-            padding: 4rem 3rem;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
-            border-radius: 24px;
-            border: 1px solid rgba(99, 102, 241, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        .hero-section p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: #4b5563;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-section .highlight {
-            font-size: 1.2rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            display: block;
-            margin-top: 2rem;
-            font-style: italic;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-        
-        .feature-card {
+        section {
+            margin-bottom: 4rem;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(99, 102, 241, 0.12);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
-        }
-        
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-        
-        .feature-card h2 {
-            color: #0f172a;
-            font-size: 1.6rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 700;
-        }
-        
-        .feature-card h2::before {
-            content: '✨';
-            font-size: 1.2rem;
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .feature-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(99, 102, 241, 0.08);
-            display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
-            transition: all 0.2s ease;
-        }
-        
-        .feature-list li:hover {
-            padding-left: 0.5rem;
-            background: rgba(99, 102, 241, 0.02);
-            border-radius: 8px;
-            margin: 0 -0.5rem;
-        }
-        
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .feature-list li::before {
-            content: none;
-        }
-        
-        .feature-icon {
-            font-size: 1.5rem;
-            min-width: 3rem;
-            height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-            border-radius: 12px;
-            border: 1px solid rgba(99, 102, 241, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.1);
             transition: all 0.3s ease;
         }
         
-        .feature-list li:hover .feature-icon {
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+        
+        section:first-child {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+        }
+        
+        h1, h2 {
+            color: #0f172a;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        h2::before {
+            content: '✨';
+            font-size: 1.5rem;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+        
+        .industry-tags {
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+        
+        .industry-tag {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            color: #6366f1;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .industry-tag:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            transform: translateY(-2px);
+        }
+        
+        .highlight {
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 2rem;
+            font-style: italic;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul li {
+            padding: 1rem 0;
+            color: #4b5563;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        ul li:last-child {
+            border-bottom: none;
+        }
+        
+        ul li:hover {
+            padding-left: 1rem;
+            background: rgba(99, 102, 241, 0.03);
+            border-radius: 12px;
+            margin: 0 -1rem;
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 12px;
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        ul li:hover .feature-icon {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
             transform: scale(1.1);
+        }
+        
+        .feature-content strong {
+            color: #1f2937;
+            font-weight: 600;
         }
         
         .contact-section {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             color: white;
-            padding: 4rem 3rem;
-            border-radius: 24px;
             text-align: center;
-            margin-top: 5rem;
             position: relative;
             overflow: hidden;
         }
@@ -289,8 +256,14 @@
         
         .contact-section h2 {
             color: white;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-info {
@@ -299,30 +272,45 @@
             gap: 3rem;
             margin: 2rem 0;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
             font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
         
         .cta {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
             color: white;
-            padding: 1.25rem 3rem;
-            border-radius: 60px;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
             text-align: center;
             font-weight: 600;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
             font-size: 1.1rem;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
         
         .cta::before {
@@ -347,149 +335,18 @@
         }
         
         footer {
+            text-align: center;
+            padding: 3rem 2rem;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: rgba(255, 255, 255, 0.85);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 4rem 2rem 2rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-section h4 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-badges {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .badge {
-            background: rgba(99, 102, 241, 0.2);
-            color: rgba(255, 255, 255, 0.9);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            display: inline-block;
-            width: fit-content;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-links li {
-            color: rgba(255, 255, 255, 0.7);
-            padding: 0.5rem 0;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .footer-links li:hover {
-            color: #60a5fa;
-        }
-        
-        .footer-contact p {
-            margin: 0.8rem 0;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .footer-copyright {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-        
-        .footer-legal {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.85rem;
-        }
-        
-        .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-        
-        .stat-label {
             font-size: 0.95rem;
-            color: #1f2937;
-            margin-top: 0.75rem;
-            font-weight: 600;
-        }
-        
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Loading animation for initial page load */
-        body {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.2s forwards;
+            line-height: 1.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.8rem;
-                line-height: 1.1;
+                font-size: 2.5rem;
             }
             
             header h2 {
@@ -498,567 +355,45 @@
             }
             
             header {
-                padding: 4rem 1.5rem;
+                padding: 3rem 1rem;
             }
             
             main {
-                padding: 3rem 1.5rem;
+                padding: 2rem 1rem;
             }
             
-            .hero-section {
-                padding: 3rem 2rem;
-                margin-bottom: 4rem;
+            section {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
             }
             
-            .hero-section p {
-                font-size: 1.1rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            
-            .feature-card {
-                padding: 2.5rem 2rem;
+            .industry-tags {
+                justify-content: center;
             }
             
             .contact-info {
                 flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .contact-section {
-                padding: 3rem 2rem;
-                margin-top: 4rem;
-            }
-            
-            .stats-row {
-                gap: 2rem;
+                gap: 1rem;
             }
             
             .cta {
-                padding: 1.2rem 2.5rem;
+                padding: 1rem 2rem;
                 font-size: 1rem;
-            }
-        }
-        
-        /* Testimonials Section */
-        .testimonials-section {
-            margin: 6rem 0;
-            text-align: center;
-        }
-        
-        .testimonials-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, #0f172a, #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.1);
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
-        }
-        
-        .testimonial-content {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #4b5563;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .author-avatar {
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-        
-        .author-name {
-            font-weight: 600;
-            color: #1f2937;
-        }
-        
-        .author-title {
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-        
-        /* Technology Section */
-        .technology-section {
-            margin: 6rem 0;
-            text-align: center;
-        }
-        
-        .technology-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .tech-item {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .tech-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.3);
-        }
-        
-        .tech-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-        
-        .tech-item h3 {
-            font-size: 1.3rem;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-item p {
-            color: #6b7280;
-            line-height: 1.6;
-        }
-        
-        /* Use Cases Section */
-        .use-cases-section {
-            margin: 6rem 0;
-        }
-        
-        .use-cases-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            background: linear-gradient(135deg, #8b5cf6, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .use-case-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            padding: 3rem;
-            border-radius: 24px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .use-case-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(99, 102, 241, 0.2);
-        }
-        
-        .use-case-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .use-case-icon {
-            font-size: 2.5rem;
-            width: 4rem;
-            height: 4rem;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-        
-        .use-case-header h3 {
-            font-size: 1.5rem;
-            color: #1f2937;
-            margin: 0;
-        }
-        
-        .use-case-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 2rem 0;
-        }
-        
-        .use-case-list li {
-            padding: 0.8rem 0;
-            color: #4b5563;
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .use-case-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #6366f1;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .use-case-result {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(99, 102, 241, 0.1));
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            color: #059669;
-            font-size: 0.95rem;
-        }
-        
-        /* Roadmap Section */
-        .roadmap-section {
-            margin: 6rem 0;
-            text-align: center;
-        }
-        
-        .roadmap-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            background: linear-gradient(135deg, #1f2937, #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .roadmap-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .roadmap-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, #6366f1, #8b5cf6, #a855f7);
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin: 3rem 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-        
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        .timeline-marker {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-        
-        .timeline-item.completed .timeline-marker {
-            background: #22c55e;
-            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
-        }
-        
-        .timeline-item.current .timeline-marker {
-            background: #6366f1;
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
-            animation: pulse 2s infinite;
-        }
-        
-        .timeline-item.future .timeline-marker {
-            background: #9ca3af;
-            box-shadow: 0 0 0 4px rgba(156, 163, 175, 0.2);
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.2); }
-        }
-        
-        .timeline-content {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.1);
-            width: 45%;
-            margin: 0 5%;
-        }
-        
-        .timeline-content h3 {
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .timeline-content p {
-            color: #6b7280;
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            margin: 6rem 0;
-        }
-        
-        .faq-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            background: linear-gradient(135deg, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .faq-item {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 48px rgba(99, 102, 241, 0.15);
-        }
-        
-        .faq-item h3 {
-            color: #1f2937;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            line-height: 1.4;
-        }
-        
-        .faq-item p {
-            color: #4b5563;
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        /* Enhanced CTA Section */
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .cta-option {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-option:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-        }
-        
-        .cta-option h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .cta-option p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .cta.secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: none;
-        }
-        
-        .cta.secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-            color: white;
-        }
-        
-        .cta.primary {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            color: #6366f1;
-            margin-top: 3rem;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-        }
-        
-        .cta.primary:hover {
-            color: #4f46e5;
-            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
-        }
-        
-        @media (max-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tech-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-            
-            .use-cases-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .roadmap-timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-item {
-                flex-direction: row !important;
-                padding-left: 50px;
-            }
-            
-            .timeline-marker {
-                left: 20px !important;
-            }
-            
-            .timeline-content {
-                width: 100%;
-                margin: 0;
-            }
-            
-            .faq-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
             }
         }
         
         @media (max-width: 480px) {
             header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-section {
-                padding: 2.5rem 1.5rem;
-            }
-            
-            .feature-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .contact-section {
-                padding: 2.5rem 1.5rem;
-            }
-            
-            .stats-row {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .testimonials-section h2,
-            .technology-section h2,
-            .use-cases-section h2,
-            .roadmap-section h2,
-            .faq-section h2 {
                 font-size: 2rem;
             }
             
-            .testimonial-card,
-            .tech-item,
-            .use-case-card,
-            .faq-item {
-                padding: 2rem 1.5rem;
+            section {
+                padding: 1.5rem 1rem;
+            }
+            
+            .industry-tag {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
             }
         }
     </style>
@@ -1071,405 +406,221 @@
         </header>
         
         <main>
-            <section class="hero-section">
-                <p>
+            <section>
+                <div class="intro-text">
                     Dans un monde où tout peut être copié, modifié ou falsifié, AUTHENTICA® crée un pont inviolable entre un objet ou une œuvre et son propriétaire légitime.
-                </p>
-                <p>
-                    🎼 Musique. 📦 Produits de luxe. 🛩️ Industrie. ⚖️ Notariat. 🎨 Art. 🔒 Sécurité.<br>
+                </div>
+                
+                <div class="industry-tags">
+                    <span class="industry-tag">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12,3V12.26C11.5,12.09 11,12 10.5,12C8,12 6,14 6,16.5C6,19 8,21 10.5,21C13,21 15,19 15,16.5V6H19V3H12Z"/>
+                        </svg>
+                        Musique
+                    </span>
+                    <span class="industry-tag">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M2,10.96C1.5,10.68 1.35,10.07 1.63,9.59L3.13,7C3.24,6.8 3.41,6.66 3.6,6.58L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.66,6.72 20.82,6.88 20.91,7.08L22.36,9.6C22.64,10.08 22.47,10.69 22,10.96L21,11.54V16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V11.54L2,10.96M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z"/>
+                        </svg>
+                        Produits de luxe
+                    </span>
+                    <span class="industry-tag">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M6.5,10C4,10 2,12 2,14.5C2,17 4,19 6.5,19C9,19 11,17 11,14.5C11,12 9,10 6.5,10M6,13H7V16H6V13M17.5,10C15,10 13,12 13,14.5C13,17 15,19 17.5,19C20,19 22,17 22,14.5C22,12 20,10 17.5,10M17,13H18V16H17V13M7.75,7.25H8.5V8.5H10.5V9.25H11V10H10.25V11H9.5V10H8.5V9.25H7.75V8.5H7V7.75H7.75V7.25M16.25,7.25H17V8H17.75V8.75H17V9.5H16.25V8.75H15.5V8H16.25V7.25M12,4C10.08,4 8.5,5.75 8.5,8V9H15.5V8C15.5,5.75 13.92,4 12,4Z"/>
+                        </svg>
+                        Industrie
+                    </span>
+                    <span class="industry-tag">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                        Notariat
+                    </span>
+                    <span class="industry-tag">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M9,11H15L13.5,7.5L9,11M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,21H5V3H13V9H19V21Z"/>
+                        </svg>
+                        Art
+                    </span>
+                    <span class="industry-tag">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V16H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
+                        </svg>
+                        Sécurité
+                    </span>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
                     Une même technologie pour certifier, tracer, désactiver ou transférer la propriété.
-                </p>
-                <p class="highlight">Brevet français. Vision mondiale. Intégration prête.</p>
+                </div>
                 
-                <div class="stats-row">
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Souverain</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Évolutif</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">🔒</span>
-                        <span class="stat-label">Sécurisé</span>
-                    </div>
-                </div>
+                <div class="highlight">Brevet français. Vision mondiale. Intégration prête.</div>
             </section>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h2>Ce que fait AUTHENTICA®</h2>
-                    <ul class="feature-list">
-                        <li>
-                            <div class="feature-icon">🔐</div>
-                            <div>
-                                <strong>LockDNA™</strong> – une empreinte unique, non reproductible, physique ou numérique
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">📜</div>
-                            <div>
-                                <strong>NFT certifié</strong> – identité, propriétaire, ayants droit, statut, transfert
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">⚖️</div>
-                            <div>
-                                <strong>Preuve opposable</strong> – IA, copie, export, litige, revente
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">🌍</div>
-                            <div>
-                                <strong>Interconnexion</strong> avec GEMA, ASCAP, PRS, SACEM, notaires, marques, blockchain
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">🚫</div>
-                            <div>
-                                <strong>Désactivation</strong> d'une œuvre ou d'un objet en cas de vol ou fraude
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">📈</div>
-                            <div>
-                                <strong>Base souveraine</strong> évolutive, compatible API et portail de vérification public
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h2>Pour qui ?</h2>
-                    <ul class="feature-list">
-                        <li>
-                            <div class="feature-icon">🎵</div>
-                            <div>
-                                <strong>Sociétés de gestion</strong> & éditeurs musicaux
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">👜</div>
-                            <div>
-                                <strong>Marques de luxe</strong> & protection contre la contrefaçon
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">📄</div>
-                            <div>
-                                <strong>Notaires</strong> & certification de documents sensibles
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">🏛️</div>
-                            <div>
-                                <strong>Institutions publiques</strong> & souveraineté numérique
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">🧠</div>
-                            <div>
-                                <strong>IA</strong> & détection d'usage non autorisé
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">📦</div>
-                            <div>
-                                <strong>Logistique</strong>, sécurité, tracking, Web3
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Testimonials Section -->
-            <section class="testimonials-section">
-                <h2>Ce que disent nos partenaires</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            "AUTHENTICA® révolutionne notre approche de la certification. Une technologie française d'excellence qui répond enfin aux enjeux de souveraineté numérique."
+            <section>
+                <h2>Ce que fait AUTHENTICA®</h2>
+                <ul>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+                            </svg>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">🏛️</div>
-                            <div>
-                                <div class="author-name">Marie Dubois</div>
-                                <div class="author-title">Directrice Innovation, Institution Publique</div>
-                            </div>
+                        <div class="feature-content">
+                            <strong>LockDNA™</strong> – une empreinte unique, non reproductible, physique ou numérique
                         </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            "L'empreinte LockDNA™ nous permet de protéger nos créations musicales avec une traçabilité inégalée. Un game-changer pour l'industrie."
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">🎵</div>
-                            <div>
-                                <div class="author-name">Jean-Luc Martin</div>
-                                <div class="author-title">CEO, Société de Gestion Musicale</div>
-                            </div>
+                        <div class="feature-content">
+                            <strong>NFT certifié</strong> – identité, propriétaire, ayants droit, statut, transfert
                         </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            "La lutte anti-contrefaçon atteint un nouveau niveau avec AUTHENTICA®. Nos produits de luxe sont enfin protégés efficacement."
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11 8.57,12.64 10.57,12.92L11,13H13L13.43,12.92C15.43,12.64 17,11 17,9A5,5 0 0,0 12,4Z"/>
+                            </svg>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">👜</div>
-                            <div>
-                                <div class="author-name">Sophie Laurent</div>
-                                <div class="author-title">Responsable Sécurité, Maison de Luxe</div>
-                            </div>
+                        <div class="feature-content">
+                            <strong>Preuve opposable</strong> – IA, copie, export, litige, revente
                         </div>
-                    </div>
-                </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Interconnexion</strong> avec GEMA, ASCAP, PRS, SACEM, notaires, marques, blockchain
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M14.5,9L22,16.5L20.5,18L13,10.5L14.5,9M10,13.5L2.5,6L4,4.5L11.5,12L10,13.5Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Désactivation</strong> d'une œuvre ou d'un objet en cas de vol ou fraude
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M5,3H7V5H5V10A2,2 0 0,1 3,8V5A2,2 0 0,1 5,3M19,3A2,2 0 0,1 21,5V8A2,2 0 0,1 19,10V5H17V3H19M12,5A4,4 0 0,1 16,9A4,4 0 0,1 12,13A4,4 0 0,1 8,9A4,4 0 0,1 12,5M12,7A2,2 0 0,0 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9A2,2 0 0,0 12,7M7,18A4,4 0 0,1 11,14H13A4,4 0 0,1 17,18V20H7V18Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Base souveraine</strong> évolutive, compatible API et portail de vérification public
+                        </div>
+                    </li>
+                </ul>
             </section>
 
-            <!-- Technology Showcase -->
-            <section class="technology-section">
-                <h2>Technologie LockDNA™ en action</h2>
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <div class="tech-icon">🔬</div>
-                        <h3>Analyse Biométrique</h3>
-                        <p>Extraction d'empreintes uniques à partir de caractéristiques physiques ou numériques impossibles à reproduire.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">🧬</div>
-                        <h3>Encodage Quantique</h3>
-                        <p>Transformation des données en signatures cryptographiques résistantes aux attaques futures.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">🌐</div>
-                        <h3>Blockchain Souveraine</h3>
-                        <p>Stockage décentralisé sur infrastructure française avec gouvernance européenne.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">🤖</div>
-                        <h3>IA de Détection</h3>
-                        <p>Intelligence artificielle capable d'identifier les usages non autorisés en temps réel.</p>
-                    </div>
-                </div>
+            <section>
+                <h2>Pour qui ?</h2>
+                <ul>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M12,3V12.26C11.5,12.09 11,12 10.5,12C8,12 6,14 6,16.5C6,19 8,21 10.5,21C13,21 15,19 15,16.5V6H19V3H12Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Sociétés de gestion</strong> & éditeurs musicaux
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Marques de luxe</strong> & protection contre la contrefaçon
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Notaires</strong> & certification de documents sensibles
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.21C5.26,14 5.53,14.78 5.94,15.5C6.36,16.22 6.9,16.84 7.5,17.35L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.24 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.65L20.65,7M20.64,17L16.5,17.35C17.1,16.84 17.64,16.22 18.06,15.5C18.47,14.78 18.74,14 18.88,13.21L20.64,17Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Institutions publiques</strong> & souveraineté numérique
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M13,16.12C16.06,15.71 18.5,13.1 18.5,10C18.5,6.41 15.59,3.5 12,3.5S5.5,6.41 5.5,10C5.5,13.1 7.94,15.71 11,16.12V21.5C11,22.33 11.67,23 12.5,23S14,22.33 14,21.5V16.12M12,5.5C14.5,5.5 16.5,7.5 16.5,10S14.5,14.5 12,14.5S7.5,12.5 7.5,10S9.5,5.5 12,5.5M14,1H10V2.5H14V1Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>IA</strong> & détection d'usage non autorisé
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg class="icon icon-large" viewBox="0 0 24 24">
+                                <path d="M2,10.96C1.5,10.68 1.35,10.07 1.63,9.59L3.13,7C3.24,6.8 3.41,6.66 3.6,6.58L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.66,6.72 20.82,6.88 20.91,7.08L22.36,9.6C22.64,10.08 22.47,10.69 22,10.96L21,11.54V16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V11.54L2,10.96M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Logistique</strong>, sécurité, tracking, Web3
+                        </div>
+                    </li>
+                </ul>
             </section>
 
-            <!-- Use Cases Section -->
-            <section class="use-cases-section">
-                <h2>Cas d'usage transformateurs</h2>
-                <div class="use-cases-grid">
-                    <div class="use-case-card">
-                        <div class="use-case-header">
-                            <span class="use-case-icon">🎼</span>
-                            <h3>Industrie Musicale</h3>
-                        </div>
-                        <ul class="use-case-list">
-                            <li>Certification automatique des nouvelles créations</li>
-                            <li>Détection d'usage non autorisé sur les plateformes</li>
-                            <li>Gestion des droits d'auteur internationaux</li>
-                            <li>Traçabilité des remix et adaptations</li>
-                        </ul>
-                        <div class="use-case-result">
-                            <strong>Résultat :</strong> +85% de détection des infractions
-                        </div>
-                    </div>
-                    
-                    <div class="use-case-card">
-                        <div class="use-case-header">
-                            <span class="use-case-icon">⚖️</span>
-                            <h3>Secteur Notarial</h3>
-                        </div>
-                        <ul class="use-case-list">
-                            <li>Authentification des documents sensibles</li>
-                            <li>Preuve horodatée incontestable</li>
-                            <li>Sécurisation des transactions immobilières</li>
-                            <li>Archivage numérique sécurisé</li>
-                        </ul>
-                        <div class="use-case-result">
-                            <strong>Résultat :</strong> 100% de conformité légale
-                        </div>
-                    </div>
-                    
-                    <div class="use-case-card">
-                        <div class="use-case-header">
-                            <span class="use-case-icon">🏭</span>
-                            <h3>Industrie 4.0</h3>
-                        </div>
-                        <ul class="use-case-list">
-                            <li>Traçabilité complète des pièces détachées</li>
-                            <li>Authentification des composants critiques</li>
-                            <li>Prévention de la contrefaçon industrielle</li>
-                            <li>Maintenance prédictive sécurisée</li>
-                        </ul>
-                        <div class="use-case-result">
-                            <strong>Résultat :</strong> -90% de contrefaçons détectées
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Roadmap Section -->
-            <section class="roadmap-section">
-                <h2>Feuille de route technologique</h2>
-                <div class="roadmap-timeline">
-                    <div class="timeline-item completed">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>2024 - Brevet déposé</h3>
-                            <p>Protection intellectuelle INPI France et extension européenne</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item current">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>2025 - Pilotes industriels</h3>
-                            <p>Déploiement avec partenaires stratégiques en musique et luxe</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item future">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>2026 - Scale européen</h3>
-                            <p>Expansion dans 10 pays européens et certification ISO 27001</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item future">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>2027 - IA avancée</h3>
-                            <p>Intégration d'IA générative pour détection proactive</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FAQ Section -->
-            <section class="faq-section">
-                <h2>Questions fréquentes</h2>
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <h3>🔒 Quelle est la différence avec les NFTs classiques ?</h3>
-                        <p>AUTHENTICA® combine empreinte physique unique (LockDNA™) et NFT certifié, créant un lien inviolable entre objet réel et identité numérique.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>🌍 AUTHENTICA® est-il compatible avec les standards internationaux ?</h3>
-                        <p>Oui, notre technologie s'intègre avec GEMA, ASCAP, PRS, SACEM et respecte les réglementations RGPD européennes.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>⚡ Quelle est la vitesse de traitement ?</h3>
-                        <p>Certification en moins de 3 secondes, vérification instantanée et détection des infractions en temps réel.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>🛡️ Comment garantissez-vous la souveraineté des données ?</h3>
-                        <p>Infrastructure 100% française, gouvernance européenne, et conformité aux exigences de souveraineté numérique.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
             <section class="contact-section">
-                <h2>Prêt à révolutionner votre certification ?</h2>
-                <p>Rejoignez les leaders qui font confiance à AUTHENTICA® pour protéger leurs actifs les plus précieux.</p>
-                
-                <div class="cta-grid">
-                    <div class="cta-option">
-                        <h3>🎯 Démo personnalisée</h3>
-                        <p>Découvrez AUTHENTICA® en action avec vos propres cas d'usage</p>
-                        <a class="cta secondary" href="mailto:romain_ee@yahoo.fr?subject=Demande de démo">Réserver une démo</a>
-                    </div>
-                    
-                    <div class="cta-option">
-                        <h3>📊 Dossier stratégique</h3>
-                        <p>Recevez notre analyse complète du marché et ROI projections</p>
-                        <a class="cta secondary" href="mailto:romain_ee@yahoo.fr?subject=Dossier stratégique">Télécharger le dossier</a>
-                    </div>
-                    
-                    <div class="cta-option">
-                        <h3>🤝 Partenariat</h3>
-                        <p>Explorons ensemble les opportunités de collaboration</p>
-                        <a class="cta secondary" href="mailto:romain_ee@yahoo.fr?subject=Partenariat">Discuter d'un partenariat</a>
-                    </div>
-                </div>
+                <h2>Contact</h2>
+                <p>Vous souhaitez une démo, un partenariat ou recevoir le dossier stratégique ?</p>
                 
                 <div class="contact-info">
                     <div class="contact-item">
-                        <span>📧</span>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                        </svg>
                         <span>romain_ee@yahoo.fr</span>
                     </div>
                     <div class="contact-item">
-                        <span>📞</span>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                        </svg>
                         <span>+33 7 83 57 27 99</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Paris, France</span>
                     </div>
                 </div>
                 
-                <a class="cta primary" href="mailto:romain_ee@yahoo.fr">🚀 Commencer maintenant</a>
+                <a class="cta" href="mailto:romain_ee@yahoo.fr">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                    </svg>
+                    Demander une présentation privée
+                </a>
             </section>
         </main>
         
         <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>AUTHENTICA®</h4>
-                    <p>La révolution de la certification souveraine française</p>
-                    <div class="footer-badges">
-                        <span class="badge">🇫🇷 Made in France</span>
-                        <span class="badge">🛡️ RGPD Compliant</span>
-                        <span class="badge">📜 Brevet INPI</span>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Technologie</h4>
-                    <ul class="footer-links">
-                        <li>LockDNA™</li>
-                        <li>Blockchain Souveraine</li>
-                        <li>IA de Détection</li>
-                        <li>Certification NFT</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Secteurs</h4>
-                    <ul class="footer-links">
-                        <li>Industrie Musicale</li>
-                        <li>Luxe & Mode</li>
-                        <li>Secteur Notarial</li>
-                        <li>Institutions Publiques</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <div class="footer-contact">
-                        <p>📧 romain_ee@yahoo.fr</p>
-                        <p>📞 +33 7 83 57 27 99</p>
-                        <p>📍 Paris, France</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    © 2025 – AUTHENTICA® | Invention brevetée par Romain Ben Abdelkader
-                </div>
-                <div class="footer-legal">
-                    Basé en France | Brevet INPI | Vision européenne | Tech souveraine
-                </div>
-            </div>
+            © 2025 – AUTHENTICA®<br>
+            Invention brevetée par Romain Ben Abdelkader<br>
+            Basé en France | Brevet INPI | Vision européenne | Tech souveraine
         </footer>
     </div>
 </body>
