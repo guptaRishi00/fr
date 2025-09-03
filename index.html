@@ -13,801 +13,234 @@
             box-sizing: border-box;
         }
         
-        /* Professional Icon System */
-        .icon {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        
-        .icon-large {
-            width: 32px;
-            height: 32px;
-        }
-        
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             background: #f8f9fa;
             color: #1f2937;
-            line-height: 1.6;
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
         
-        /* Navigation */
-        .navbar {
-            background: #040a15;
-            backdrop-filter: blur(10px);
-            padding: 0.8rem 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
+        .hero-section {
+            background: linear-gradient(135deg, #03c9ee 0%, #5382ec 100%);
             color: white;
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-decoration: none;
-        }
-        
-        .nav-menu {
+            height: 100vh;
             display: flex;
-            list-style: none;
-            gap: 2rem;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-        }
-        
-        .nav-link {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-link:hover {
-            color: #fbbf24;
-        }
-        
-        .nav-cta {
-            background: #f59e0b;
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: #f8f9fa;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            color: #1f2937;
-            padding-top: 80px;
+            text-align: center;
+            padding: 2rem;
         }
         
         .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-        
-        .hero-content h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: #1f2937;
-            letter-spacing: -0.02em;
-        }
-        
-        .hero-content h2 {
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: #6b7280;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            line-height: 1.7;
-            margin-bottom: 3rem;
-            color: #4b5563;
-        }
-        
-        .hero-cta-buttons {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .hero-cta-primary {
-            background: #3b82f6;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .hero-cta-primary:hover {
-            background: #2563eb;
-            transform: translateY(-1px);
-            color: white;
-        }
-        
-        .hero-cta-secondary {
-            color: #4b5563;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-        
-        .hero-cta-secondary:hover {
-            color: #1f2937;
-        }
-        
-        .hero-visual {
-            position: relative;
-            height: 500px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-        }
-        
-        /* Services Grid */
-        .services {
-            padding: 6rem 0;
-            background: #f8f9fa;
-        }
-        
-        .services-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .services-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .services-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-        
-        .services-header p {
-            font-size: 1.2rem;
-            color: #6b7280;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #d1d5db;
-        }
-        
-        .service-card-icon {
-            width: 48px;
-            height: 48px;
-            background: #3b82f6;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        .service-card:nth-child(2) .service-card-icon {
-            background: #06b6d4;
-        }
-        
-        .service-card:nth-child(3) .service-card-icon {
-            background: #8b5cf6;
-        }
-        
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-        
-        .service-description {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #6b7280;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-features {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .service-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.95rem;
-            color: #4b5563;
-        }
-        
-        .service-features li::before {
-            content: '✓';
-            background: #dbeafe;
-            color: #3b82f6;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-        
-        /* Main Content */
-        main {
-            padding: 6rem 0;
-            background: white;
-        }
-        
-        .main-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 3rem;
-        }
-        
-        .content-card {
-            background: #f8f9fa;
-            padding: 3rem;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-        }
-        
-        .content-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #d1d5db;
-        }
-        
-        .content-card h2 {
-            color: #1f2937;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .feature-list li {
-            padding: 1rem 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            border-bottom: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .feature-list li:hover {
-            background: #f3f4f6;
-            padding-left: 1rem;
-            margin: 0 -1rem;
-            border-radius: 8px;
-        }
-        
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: #3b82f6;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: white;
-        }
-        
-        .feature-content strong {
-            color: #1a237e;
-            font-weight: 600;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: #f8f9fa;
-            color: #1f2937;
-            padding: 6rem 0;
-        }
-        
-        .contact-container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            width: 100%;
+        }
+        
+        .logo {
+            width: 650px;
+            height: auto;
+            margin-bottom: 3rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .construction-message {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .contact-section {
+            background: white;
+            color: #1f2937;
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            margin: 4rem auto;
+            max-width: 800px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         
-        .contact h2 {
-            font-size: 2.5rem;
+        .contact-title {
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             color: #1f2937;
-        }
-        
-        .contact-description {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            color: #6b7280;
-            line-height: 1.6;
         }
         
         .contact-info {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
         }
         
         .contact-item {
-            background: white;
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
             display: flex;
             align-items: center;
             gap: 1rem;
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 2px solid #e5e7eb;
             transition: all 0.3s ease;
+            text-decoration: none;
             color: #1f2937;
+            font-weight: 500;
         }
         
         .contact-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #d1d5db;
-        }
-        
-        .contact-item svg {
-            color: #3b82f6;
-        }
-        
-        .cta {
             background: #3b82f6;
             color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 12px;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .cta-button {
+            background: #3b82f6;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
             margin-top: 2rem;
+            border: 2px solid #3b82f6;
         }
         
-        .cta:hover {
+        .cta-button:hover {
             background: #2563eb;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-            color: white;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1f2937;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            border-color: #2563eb;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .hero-section {
+                padding: 3rem 1.5rem;
             }
             
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .subtitle {
+                font-size: 1rem;
             }
             
-            .services-grid,
-            .content-grid {
-                grid-template-columns: 1fr;
+            .construction-message {
+                font-size: 1rem;
             }
             
-            .nav-menu {
-                display: none;
+            .contact-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem auto;
+            }
+            
+            .contact-title {
+                font-size: 1.6rem;
             }
             
             .contact-info {
-                flex-direction: column;
                 gap: 1rem;
+            }
+            
+            .contact-item {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .logo {
+                width: 450px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .construction-message {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+            
+            .contact-section {
+                padding: 1.5rem 1rem;
+                margin: 1rem auto;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .logo {
+                width: 350px;
             }
         }
     </style>
 </head>
 <body>
-        <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="logo.png" alt="AUTHENTICA®" style="height: 60px; width: auto;">
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/>
-                    </svg>
-                    Accueil
-                </a></li>
-                <li><a href="#" class="nav-link">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,2A3,3 0 0,1 15,5V7H9V5A3,3 0 0,1 12,2M19,7V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V7H19M8,9V19H16V9H8Z"/>
-                    </svg>
-                    Services
-                </a></li>
-                <li><a href="#" class="nav-link">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
-                    </svg>
-                    À propos
-                </a></li>
-                <li><a href="#" class="nav-link">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,21H5V3H13V9H19V21Z"/>
-                    </svg>
-                    Contact
-                </a></li>
-            </ul>
-            <a href="#" class="nav-cta">Voir Détails</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-section">
         <div class="hero-container">
-            <div class="hero-content">
-                <h1>AUTHENTICA®</h1>
-                <h2>Standard souverain de certification des œuvres et objets de valeur</h2>
-                <div class="hero-description">
-                    Dans un monde où tout peut être copié, modifié ou falsifié, AUTHENTICA® crée un pont inviolable entre un objet ou une œuvre et son propriétaire légitime. Une même technologie pour certifier, tracer, désactiver ou transférer la propriété dans tous les secteurs.
-                </div>
-                <div class="hero-cta-buttons">
-                    <a href="#" class="hero-cta-primary">
-                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
-                        </svg>
-                        Commencer
-                    </a>
-                    <a href="mailto:romain_ee@yahoo.fr" class="hero-cta-secondary">Demander une démo</a>
-                </div>
-                <div style="margin-top: 2rem; font-size: 0.9rem; color: #6b7280;">
-                    <strong>Brevet français. Vision mondiale. Intégration prête.</strong>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <img src="image.jpg" alt="AUTHENTICA® Technology" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
+            <img src="logo3.png" alt="AUTHENTICA®" class="logo">
+            
+            <h1 class="subtitle">Standard souverain de certification des œuvres et objets de valeur</h1>
+            
+            <p class="construction-message">Website Under Construction</p>
         </div>
     </section>
-
-    <!-- Services Grid -->
-    <section class="services">
-        <div class="services-container">
-            <div class="services-header">
-                <h2>Solutions AUTHENTICA®</h2>
-                <p>Une technologie révolutionnaire pour sécuriser et certifier tous vos biens de valeur</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg class="icon-large" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Certification Souveraine</h3>
-                    <p class="service-description">Technologie LockDNA™ pour une certification unique et inviolable</p>
-                    <ul class="service-features">
-                        <li>Empreinte unique physique ou numérique</li>
-                        <li>NFT certifié avec droits de propriété</li>
-                        <li>Infrastructure 100% française</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg class="icon-large" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,1C18.075,1 23,5.925 23,12C23,18.075 18.075,23 12,23C5.925,23 1,18.075 1,12C1,5.925 5.925,1 12,1M12,3C7.03,3 3,7.03 3,12C3,16.97 7.03,21 12,21C16.97,21 21,16.97 21,12C21,7.03 16.97,3 12,3M16.82,6.94L15.4,8.35L12,4.95L8.6,8.35L7.18,6.94L12,2.13L16.82,6.94M7.18,17.06L8.6,15.65L12,19.05L15.4,15.65L16.82,17.06L12,21.87L7.18,17.06M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Protection Anti-Fraude</h3>
-                    <p class="service-description">Détection et prévention des contrefaçons en temps réel</p>
-                    <ul class="service-features">
-                        <li>Preuve opposable juridiquement</li>
-                        <li>Désactivation en cas de fraude</li>
-                        <li>Traçabilité complète</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg class="icon-large" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Intégration Globale</h3>
-                    <p class="service-description">Compatibilité avec les standards internationaux</p>
-                    <ul class="service-features">
-                        <li>API prête pour intégration</li>
-                        <li>Compatible GEMA, ASCAP, SACEM</li>
-                        <li>Portail de vérification public</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="main-container">
-        <div class="content-grid">
-            <div class="content-card">
-                <h2>Ce que fait AUTHENTICA®</h2>
-                <ul class="feature-list">
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>LockDNA™</strong> – une empreinte unique, non reproductible, physique ou numérique
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>NFT certifié</strong> – identité, propriétaire, ayants droit, statut, transfert
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11 8.57,12.64 10.57,12.92L11,13H13L13.43,12.92C15.43,12.64 17,11 17,9A5,5 0 0,0 12,4Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Preuve opposable</strong> – IA, copie, export, litige, revente
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Interconnexion</strong> avec GEMA, ASCAP, PRS, SACEM, notaires, marques, blockchain
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M14.5,9L22,16.5L20.5,18L13,10.5L14.5,9M10,13.5L2.5,6L4,4.5L11.5,12L10,13.5Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Désactivation</strong> d'une œuvre ou d'un objet en cas de vol ou fraude
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M5,3H7V5H5V10A2,2 0 0,1 3,8V5A2,2 0 0,1 5,3M19,3A2,2 0 0,1 21,5V8A2,2 0 0,1 19,10V5H17V3H19M12,5A4,4 0 0,1 16,9A4,4 0 0,1 12,13A4,4 0 0,1 8,9A4,4 0 0,1 12,5M12,7A2,2 0 0,0 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9A2,2 0 0,0 12,7M7,18A4,4 0 0,1 11,14H13A4,4 0 0,1 17,18V20H7V18Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Base souveraine</strong> évolutive, compatible API et portail de vérification public
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="content-card">
-                <h2>Pour qui ?</h2>
-                <ul class="feature-list">
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M12,3V12.26C11.5,12.09 11,12 10.5,12C8,12 6,14 6,16.5C6,19 8,21 10.5,21C13,21 15,19 15,16.5V6H19V3H12Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Sociétés de gestion</strong> & éditeurs musicaux
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Marques de luxe</strong> & protection contre la contrefaçon
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Notaires</strong> & certification de documents sensibles
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.21C5.26,14 5.53,14.78 5.94,15.5C6.36,16.22 6.9,16.84 7.5,17.35L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.24 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.65L20.65,7M20.64,17L16.5,17.35C17.1,16.84 17.64,16.22 18.06,15.5C18.47,14.78 18.74,14 18.88,13.21L20.64,17Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Institutions publiques</strong> & souveraineté numérique
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M13,16.12C16.06,15.71 18.5,13.1 18.5,10C18.5,6.41 15.59,3.5 12,3.5S5.5,6.41 5.5,10C5.5,13.1 7.94,15.71 11,16.12V21.5C11,22.33 11.67,23 12.5,23S14,22.33 14,21.5V16.12M12,5.5C14.5,5.5 16.5,7.5 16.5,10S14.5,14.5 12,14.5S7.5,12.5 7.5,10S9.5,5.5 12,5.5M14,1H10V2.5H14V1Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>IA</strong> & détection d'usage non autorisé
-                        </div>
-                    </li>
-                    <li>
-                        <div class="feature-icon">
-                            <svg class="icon icon-large" viewBox="0 0 24 24">
-                                <path d="M2,10.96C1.5,10.68 1.35,10.07 1.63,9.59L3.13,7C3.24,6.8 3.41,6.66 3.6,6.58L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.66,6.72 20.82,6.88 20.91,7.08L22.36,9.6C22.64,10.08 22.47,10.69 22,10.96L21,11.54V16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V11.54L2,10.96M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <strong>Logistique</strong>, sécurité, tracking, Web3
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </main>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="contact-container">
-            <h2>Contact</h2>
-            <p class="contact-description">Vous souhaitez une démo, un partenariat ou recevoir le dossier stratégique ?</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
-                    </svg>
-                    <span>romain_ee@yahoo.fr</span>
-                </div>
-                <div class="contact-item">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                    </svg>
-                    <span>+33 7 83 57 27 99</span>
-                </div>
-            </div>
-            
-            <a class="cta" href="mailto:romain_ee@yahoo.fr">
-                <svg class="icon" viewBox="0 0 24 24">
+    
+    <div class="contact-section">
+        <h2 class="contact-title">Contact</h2>
+        <div class="contact-info">
+            <a href="mailto:romain_ee@yahoo.fr" class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
                     <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
                 </svg>
-                Demander une présentation privée
+                <span>romain_ee@yahoo.fr</span>
+            </a>
+            <a href="tel:+33783572799" class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                </svg>
+                <span>+33 7 83 57 27 99</span>
             </a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            © 2025 – AUTHENTICA®<br>
-            Invention brevetée par Romain Ben Abdelkader<br>
-            Basé en France | Brevet INPI | Vision européenne | Tech souveraine
-        </div>
-    </footer>
+        
+        <a href="mailto:romain_ee@yahoo.fr" class="cta-button">
+            <svg class="contact-icon" viewBox="0 0 24 24">
+                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+            </svg>
+            Demander une présentation
+        </a>
+    </div>
 </body>
 </html>
