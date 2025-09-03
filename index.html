@@ -116,6 +116,40 @@
             fill: currentColor;
         }
         
+        .hero-contact {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .contact-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .hero-email {
+            background: rgba(255, 255, 255, 0.9);
+            color: #3b82f6;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-email:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: #2563eb;
+        }
+        
         .cta-button {
             background: #3b82f6;
             color: white;
@@ -215,12 +249,23 @@
             <h1 class="subtitle">Standard souverain de certification des œuvres et objets de valeur</h1>
             
             <p class="construction-message">Website Under Construction</p>
+            
+            <div class="hero-contact">
+                <span class="contact-text">For information:</span>
+                <a href="mailto:romain@lokdna.tech" class="hero-email">romain@lokdna.tech</a>
+            </div>
         </div>
     </section>
     
     <div class="contact-section">
         <h2 class="contact-title">Contact</h2>
         <div class="contact-info">
+            <a href="mailto:romain@lokdna.tech" class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                </svg>
+                <span>romain@lokdna.tech</span>
+            </a>
             <a href="mailto:romain_ee@yahoo.fr" class="contact-item">
                 <svg class="contact-icon" viewBox="0 0 24 24">
                     <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
@@ -235,11 +280,11 @@
             </a>
         </div>
         
-        <a href="mailto:romain_ee@yahoo.fr" class="cta-button">
+        <a href="mailto:romain@lokdna.tech" class="cta-button">
             <svg class="contact-icon" viewBox="0 0 24 24">
                 <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
             </svg>
-            Demander une présentation
+            Connect for Information
         </a>
     </div>
 </body>
